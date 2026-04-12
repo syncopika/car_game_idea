@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://materials/ground.material" type="Material" id=1]
+[ext_resource path="res://game.gd" type="Script" id=6]
+
+[sub_resource type="CubeMesh" id=2]
+material = ExtResource( 1 )
+size = Vector3( 150, 1, 150 )
+
+[sub_resource type="ConcavePolygonShape" id=8]
+data = PoolVector3Array( -75, 0.5, 75, 75, 0.5, 75, -75, -0.5, 75, 75, 0.5, 75, 75, -0.5, 75, -75, -0.5, 75, 75, 0.5, -75, -75, 0.5, -75, 75, -0.5, -75, -75, 0.5, -75, -75, -0.5, -75, 75, -0.5, -75, 75, 0.5, 75, 75, 0.5, -75, 75, -0.5, 75, 75, 0.5, -75, 75, -0.5, -75, 75, -0.5, 75, -75, 0.5, -75, -75, 0.5, 75, -75, -0.5, -75, -75, 0.5, 75, -75, -0.5, 75, -75, -0.5, -75, 75, 0.5, 75, -75, 0.5, 75, 75, 0.5, -75, -75, 0.5, 75, -75, 0.5, -75, 75, 0.5, -75, -75, -0.5, 75, 75, -0.5, 75, -75, -0.5, -75, 75, -0.5, 75, 75, -0.5, -75, -75, -0.5, -75 )
+
+[sub_resource type="PrismMesh" id=9]
+size = Vector3( 4.347, 8, 6 )
+
+[sub_resource type="ConcavePolygonShape" id=10]
+data = PoolVector3Array( 0, 4, 3, 2.1735, -4, 3, -2.1735, -4, 3, 0, 4, -3, -2.1735, -4, -3, 2.1735, -4, -3, 0, 4, 3, 0, 4, -3, 2.1735, -4, 3, 0, 4, -3, 2.1735, -4, -3, 2.1735, -4, 3, 0, 4, -3, 0, 4, 3, -2.1735, -4, -3, 0, 4, 3, -2.1735, -4, 3, -2.1735, -4, -3, -2.1735, -4, 3, 2.1735, -4, 3, -2.1735, -4, -3, 2.1735, -4, 3, 2.1735, -4, -3, -2.1735, -4, -3 )
+
+[sub_resource type="CubeMesh" id=11]
+
+[sub_resource type="BoxShape" id=12]
+
+[sub_resource type="CubeMesh" id=13]
+
+[sub_resource type="BoxShape" id=14]
+
+[node name="game" type="Spatial"]
+pause_mode = 2
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00303483, 0, 0.00619459 )
+script = ExtResource( 6 )
+
+[node name="ground" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.821939, -0.2335, 2.2273 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground/StaticBody"]
+shape = SubResource( 8 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1.91069e-15, -4.37114e-08, 1, -0.97038, -0.241583, -1.05599e-08, 0.241583, -0.97038, -4.24167e-08, 24.5453, 1.32439, 2.21462 )
+mesh = SubResource( 9 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 4.55766, -0.411109, -0.0988216, 2.05614, 0.911269, 0.219049, 0, -0.0240309, 9.99711, 25.3631, 3.19596, 20.9568 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance2/StaticBody"]
+shape = SubResource( 12 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 11.2292, -3.18551, -0.504595, 0.975309, -2.85026, 1.12204, -9.39913, -2.62861, -0.303712, 15.126, 3.28549, 43.6555 )
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance3/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 0.202315, -1.98035, 0.0683661, -1.80025, -0.132358, 0.014138, -0.0883094, 0.1623, -1.76817, -28.8305, -2.52062, 54.2954 )
+mesh = SubResource( 9 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance4/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( 0.0767585, 0.0171037, -9.99736, 0.423127, 0.996244, 0.183434, 4.98147, -0.0848843, 0.138466, -9.56918, 1.36468, 53.9744 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance5/StaticBody"]
+shape = SubResource( 12 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 0.799538, -0.263679, 0.539641, 0, 0.89848, 0.439014, -0.600616, -0.351008, 0.718369, 59.9952, 37.9263, 74.9729 )
+light_energy = 2.455
+shadow_enabled = true
+shadow_reverse_cull_face = true
+spot_range = 201.594
+spot_angle = 46.82

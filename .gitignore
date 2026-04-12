@@ -1,0 +1,16 @@
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores (if using Godot Mono/C#)
+.mono/
+data_*/
+mono_crash.*.json
+
+# System/Tool-specific ignores
+.DS_Store
+Thumbs.db

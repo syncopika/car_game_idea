@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://textures/gtr_texture.png" type="Texture" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+
+uniform sampler2D diffuse;
+
+void fragment(){
+	vec4 color = texture(diffuse, UV);
+	ALBEDO = vec3(1.0 - color.r, 1.0 - color.g, 1.0 - color.b);
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/diffuse = ExtResource( 1 )

@@ -8,6 +8,9 @@ var gtr = preload("res://models/gtr/gtr-demo.tscn")
 var r8 = preload("res://models/r8/r8-demo.tscn")
 var revuelto = preload("res://models/revuelto/revuelto-demo.tscn")
 
+var game_menu_scene = preload("res://ui/game_menu/game_menu.tscn")
+var game_menu
+
 var is_paused = false
 var camera_pos = "behind" # behind car
 var initial_car_pos
@@ -38,6 +41,7 @@ func _unhandled_input(event: InputEvent):
 			# pause the game
 			is_paused = !is_paused
 			get_tree().paused = is_paused
+			#game_menu.visible = is_paused
 			
 func _ready():	
 	var selected_car_model = gtr
@@ -50,6 +54,10 @@ func _ready():
 	add_child(car_instance)
 	car_instance.global_transform.origin = Vector3(20, 2, -30)
 	car = car_instance
+	
+	game_menu = game_menu_scene.instance()
+	add_child(game_menu)
+	#game_menu.visible = false
 
 	initial_car_pos = car.global_transform.origin
 	initial_car_rot = car.transform.basis.get_euler()

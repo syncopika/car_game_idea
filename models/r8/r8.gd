@@ -6,7 +6,7 @@ var max_rpm = 600
 var max_torque = 200
 var last_rpm = 0
 
-var skidmark_script = load("res://skidmark.gd")
+var skidmark_script = load("res://materials/skidmark.gd")
 var texture = preload("res://models/r8/r8_texture.png")
 
 func _ready():
@@ -80,9 +80,11 @@ func _physics_process(delta):
 		# note that shadermaterial has no albedo_color property so we need to verify albedo_color exists
 		# make sure the material has transparent flag enabled + depth draw mode set to "always"
 		if "albedo_color" in material:
+			material.flags_transparent = true
 			material.albedo_color.a = 0.5
 	else:
 		if "albedo_color" in material:
+			material.flags_transparent = false
 			material.albedo_color.a = 1.0
 
 

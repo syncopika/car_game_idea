@@ -6,3 +6,4 @@ func _ready():
 func _back_btn_pressed():
 	# go back to main menu
 	get_tree().change_scene("res://ui/menu/menu.tscn")
+	get_tree().paused = false

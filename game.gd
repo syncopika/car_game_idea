@@ -41,9 +41,13 @@ func _unhandled_input(event: InputEvent):
 			# pause the game
 			is_paused = !is_paused
 			get_tree().paused = is_paused
-			#game_menu.visible = is_paused
 			
-func _ready():	
+			var game_menu_children = game_menu.get_children()
+			for child in game_menu_children:
+				child.visible = !child.visible
+			
+func _ready():
+	#print(OS.get_time())
 	var selected_car_model = gtr
 	if Global.selected_car == "r8":
 		selected_car_model = r8

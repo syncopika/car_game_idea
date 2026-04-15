@@ -39,7 +39,7 @@ func update_car_material():
 	var car_mat = Global.selected_car_material
 	var mat
 	if car_mat == "normal":
-		mat = preload("res://models/gtr/Material.material")
+		mat = load("res://models/%s/Material.material" % Global.selected_car)
 	elif car_mat == "inverted":
 		mat = preload("res://materials/inverted_shader.tres")
 		var tex = get_curr_car_texture()

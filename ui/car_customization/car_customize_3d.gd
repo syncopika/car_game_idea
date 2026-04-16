@@ -50,13 +50,10 @@ func update_car_material():
 		mat.set_shader_param("diffuse", tex)
 
 	if mat:
-		print("setting material to ", car_mat)
+		#print("setting material to ", car_mat)
 		var car_body = $"selectedCar".get_child(0).get_child(0) # 0th child should be the vehiclebody parent and its 0th child should be the car body mesh
-		print(car_body)
+		#print(car_body)
 		car_body.set_surface_material(0, mat)
 
 func _ready():
-	# by default, show gtr model
-	var instance = gtr.instance()
-	$"selectedCar".add_child(instance)
-	instance.global_transform.origin = Vector3(0, 0, 0)
+	change_car_model()

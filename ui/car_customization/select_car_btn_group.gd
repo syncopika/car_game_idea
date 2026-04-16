@@ -10,7 +10,9 @@ onready var viewport = get_parent().get_parent().get_node("./ViewportContainer")
 func _ready():
 	for button in button_group.get_buttons():
 		button.connect("pressed", self, "_on_button_pressed")
-	#print(viewport)
+
+		if Global.selected_car == button.text:
+			button.pressed = true
 
 func _on_button_pressed():
 	var pressed_btn = button_group.get_pressed_button()

@@ -37,7 +37,7 @@ func _unhandled_input(event: InputEvent):
 			car.rotation = initial_car_rot
 			car.linear_velocity = Vector3.ZERO
 			car.angular_velocity = Vector3.ZERO
-		if event.scancode == KEY_P:
+		if event.scancode == KEY_P || event.scancode == KEY_ESCAPE:
 			# pause the game
 			is_paused = !is_paused
 			get_tree().paused = is_paused

@@ -1,4 +1,4 @@
-extends TextureButton
+extends Button
 
 var free_play_scene = preload("res://game.tscn")
 

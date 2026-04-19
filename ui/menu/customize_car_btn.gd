@@ -1,4 +1,4 @@
-extends TextureButton
+extends Button
 
 var customize_car_scene = preload("res://ui/car_customization/car_customization.tscn")
 

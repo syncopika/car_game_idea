@@ -1,4 +1,4 @@
-extends TextureButton
+extends Button
 
 var options_scene = preload("res://ui/options/options.tscn")
 

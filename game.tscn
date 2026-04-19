@@ -30,7 +30,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00303483, 0, 0.00619459 )
 script = ExtResource( 6 )
 
 [node name="ground" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.821939, -0.2335, 2.2273 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3533, -0.0786242, 6.9406 )
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -87,6 +87,56 @@ material/0 = null
 [node name="StaticBody" type="StaticBody" parent="MeshInstance5"]
 
 [node name="CollisionShape" type="CollisionShape" parent="MeshInstance5/StaticBody"]
+shape = SubResource( 12 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="."]
+transform = Transform( -0.409694, -4.03759, -0.551181, 0.30977, -2.80788, 1.1303, -14.6672, 0.997353, 0.156348, -17.8013, 1.10835, -2.99603 )
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance6/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="."]
+transform = Transform( 0.54842, 4.02798, 0.549678, 0.30977, -2.80788, 1.1303, 14.6626, -1.0355, -0.161555, -33.0558, 1.10835, -1.93619 )
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance7/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="."]
+transform = Transform( -0.0482215, -0.999193, -0.0642727, -1.99927, 0.0244819, -0.0224109, 0.0239663, 0.0318545, -1.99884, -6.65816, 0.192723, -35.041 )
+mesh = SubResource( 9 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance8/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="."]
+transform = Transform( -2.47586, 0.433379, 7.52985, 3.39579, 0.733586, 0.244089, -2.709, 0.523482, -6.57585, -32.6719, 0.550127, -40.3454 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance9"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance9/StaticBody"]
+shape = SubResource( 12 )
+
+[node name="MeshInstance10" type="MeshInstance" parent="."]
+transform = Transform( -3.46459, 0.651766, -3.08325, 3.39579, 0.733586, 0.244089, 1.21046, -0.192488, -9.50968, -45.582, 0.550127, 40.922 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance10"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance10/StaticBody"]
 shape = SubResource( 12 )
 
 [node name="SpotLight" type="SpotLight" parent="."]

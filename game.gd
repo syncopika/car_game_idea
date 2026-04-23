@@ -23,7 +23,7 @@ func _unhandled_input(event: InputEvent):
 	var camera = car.get_node("camera_pivot")
 		
 	if event is InputEventKey and event.pressed:
-		if event.scancode == KEY_1:
+		if event.scancode == KEY_F1:
 			# change camera position
 			if camera_pos == "behind":
 				camera_pos = "front"

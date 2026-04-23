@@ -78,7 +78,7 @@ func _physics_process(delta):
 		# if turning, make the car body slightly transparent
 		# note that shadermaterial has no albedo_color property so we need to verify albedo_color exists
 		# make sure the material has transparent flag enabled + depth draw mode set to "always"
-		if "albedo_color" in material:
+		if Global.transparency_on && "albedo_color" in material:
 			material.flags_transparent = true
 			material.albedo_color.a = 0.5
 	else:

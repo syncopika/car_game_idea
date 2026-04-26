@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ui/car_customization/car_customize_3d.gd" type="Script" id=1]
+
+[sub_resource type="Environment" id=1]
+background_energy = 0.52
+ambient_light_color = Color( 0.631373, 0.619608, 0.619608, 1 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
@@ -9,3 +13,6 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 0.938324, 0.345757, 0, -0.345757, 0.938324, -0.0199637, 1.40484, 4.67722 )
 
 [node name="selectedCar" type="Spatial" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )

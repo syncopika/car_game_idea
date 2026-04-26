@@ -42,9 +42,21 @@ func _unhandled_input(event: InputEvent):
 			is_paused = !is_paused
 			get_tree().paused = is_paused
 			
-			var game_menu_children = game_menu.get_children()
+			# show game menu
+			var game_menu_children = game_menu.children()
 			for child in game_menu_children:
 				child.visible = !child.visible
+				
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT:
+			if event.pressed:
+				print("honk honk")
+				$car_horn.volume_db = Global.effects_volume_db
+				$car_horn.play()
+			else:
+				$car_horn.stop()
+			
+			
 			
 func _ready():
 	#print(OS.get_time())
@@ -61,7 +73,6 @@ func _ready():
 	
 	game_menu = game_menu_scene.instance()
 	add_child(game_menu)
-	#game_menu.visible = false
 
 	initial_car_pos = car.global_transform.origin
 	initial_car_rot = car.transform.basis.get_euler()

@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="car game idea"
-run/main_scene="res://ui/menu/menu.tscn"
+run/main_scene="res://ui/main_menu/menu.tscn"
 config/icon="res://textures/icon.png"
 
 [autoload]

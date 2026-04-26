@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://materials/ground.material" type="Material" id=1]
+[ext_resource path="res://audio/car_horn_edit.ogg" type="AudioStream" id=2]
 [ext_resource path="res://game.gd" type="Script" id=6]
 
 [sub_resource type="CubeMesh" id=2]
@@ -10,7 +11,11 @@ size = Vector3( 150, 1, 150 )
 [sub_resource type="ConcavePolygonShape" id=8]
 data = PoolVector3Array( -75, 0.5, 75, 75, 0.5, 75, -75, -0.5, 75, 75, 0.5, 75, 75, -0.5, 75, -75, -0.5, 75, 75, 0.5, -75, -75, 0.5, -75, 75, -0.5, -75, -75, 0.5, -75, -75, -0.5, -75, 75, -0.5, -75, 75, 0.5, 75, 75, 0.5, -75, 75, -0.5, 75, 75, 0.5, -75, 75, -0.5, -75, 75, -0.5, 75, -75, 0.5, -75, -75, 0.5, 75, -75, -0.5, -75, -75, 0.5, 75, -75, -0.5, 75, -75, -0.5, -75, 75, 0.5, 75, -75, 0.5, 75, 75, 0.5, -75, -75, 0.5, 75, -75, 0.5, -75, 75, 0.5, -75, -75, -0.5, 75, 75, -0.5, 75, -75, -0.5, -75, 75, -0.5, 75, 75, -0.5, -75, -75, -0.5, -75 )
 
+[sub_resource type="SpatialMaterial" id=15]
+albedo_color = Color( 0.607843, 0.443137, 0.109804, 1 )
+
 [sub_resource type="PrismMesh" id=9]
+material = SubResource( 15 )
 size = Vector3( 4.347, 8, 6 )
 
 [sub_resource type="ConcavePolygonShape" id=10]
@@ -18,11 +23,32 @@ data = PoolVector3Array( 0, 4, 3, 2.1735, -4, 3, -2.1735, -4, 3, 0, 4, -3, -2.17
 
 [sub_resource type="CubeMesh" id=11]
 
+[sub_resource type="SpatialMaterial" id=16]
+albedo_color = Color( 0.466667, 0.180392, 0.545098, 1 )
+
 [sub_resource type="BoxShape" id=12]
 
 [sub_resource type="CubeMesh" id=13]
 
+[sub_resource type="SpatialMaterial" id=17]
+albedo_color = Color( 0.647059, 0.160784, 0.321569, 1 )
+
 [sub_resource type="BoxShape" id=14]
+
+[sub_resource type="SpatialMaterial" id=18]
+albedo_color = Color( 0.129412, 0.435294, 0.176471, 1 )
+
+[sub_resource type="SpatialMaterial" id=19]
+albedo_color = Color( 0.101961, 0.364706, 0.12549, 1 )
+
+[sub_resource type="SpatialMaterial" id=20]
+albedo_color = Color( 0.156863, 0.12549, 0.501961, 1 )
+
+[sub_resource type="SpatialMaterial" id=21]
+albedo_color = Color( 0.501961, 0.309804, 0.141176, 1 )
+
+[sub_resource type="SpatialMaterial" id=22]
+albedo_color = Color( 0.113725, 0.396078, 0.388235, 1 )
 
 [node name="game" type="Spatial"]
 pause_mode = 2
@@ -52,7 +78,7 @@ shape = SubResource( 10 )
 [node name="MeshInstance2" type="MeshInstance" parent="."]
 transform = Transform( 4.55766, -0.411109, -0.0988216, 2.05614, 0.911269, 0.219049, 0, -0.0240309, 9.99711, 25.3631, 3.19596, 20.9568 )
 mesh = SubResource( 11 )
-material/0 = null
+material/0 = SubResource( 16 )
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance2"]
 
@@ -60,9 +86,9 @@ material/0 = null
 shape = SubResource( 12 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="."]
-transform = Transform( 11.2292, -3.18551, -0.504595, 0.975309, -2.85026, 1.12204, -9.39913, -2.62861, -0.303712, 15.126, 3.28549, 43.6555 )
+transform = Transform( 11.2292, -3.18551, -0.504595, 0.975309, -2.85026, 1.12204, -9.39913, -2.62861, -0.303712, 15.1309, 3.28549, 43.6562 )
 mesh = SubResource( 13 )
-material/0 = null
+material/0 = SubResource( 17 )
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance3"]
 
@@ -92,7 +118,7 @@ shape = SubResource( 12 )
 [node name="MeshInstance6" type="MeshInstance" parent="."]
 transform = Transform( -0.409694, -4.03759, -0.551181, 0.30977, -2.80788, 1.1303, -14.6672, 0.997353, 0.156348, -17.8013, 1.10835, -2.99603 )
 mesh = SubResource( 13 )
-material/0 = null
+material/0 = SubResource( 18 )
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance6"]
 
@@ -102,7 +128,7 @@ shape = SubResource( 14 )
 [node name="MeshInstance7" type="MeshInstance" parent="."]
 transform = Transform( 0.54842, 4.02798, 0.549678, 0.30977, -2.80788, 1.1303, 14.6626, -1.0355, -0.161555, -33.0558, 1.10835, -1.93619 )
 mesh = SubResource( 13 )
-material/0 = null
+material/0 = SubResource( 19 )
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance7"]
 
@@ -122,7 +148,7 @@ shape = SubResource( 10 )
 [node name="MeshInstance9" type="MeshInstance" parent="."]
 transform = Transform( -2.47586, 0.433379, 7.52985, 3.39579, 0.733586, 0.244089, -2.709, 0.523482, -6.57585, -32.6719, 0.550127, -40.3454 )
 mesh = SubResource( 11 )
-material/0 = null
+material/0 = SubResource( 20 )
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance9"]
 
@@ -132,7 +158,7 @@ shape = SubResource( 12 )
 [node name="MeshInstance11" type="MeshInstance" parent="."]
 transform = Transform( 2.65576, -0.514152, 6.73442, 3.39579, 0.733586, 0.244089, -2.53288, 0.444408, 7.38837, 34.5394, 0.550127, -32.7073 )
 mesh = SubResource( 11 )
-material/0 = null
+material/0 = SubResource( 21 )
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance11"]
 
@@ -142,11 +168,21 @@ shape = SubResource( 12 )
 [node name="MeshInstance10" type="MeshInstance" parent="."]
 transform = Transform( -3.46459, 0.651766, -3.08325, 3.39579, 0.733586, 0.244089, 1.21046, -0.192488, -9.50968, -45.582, 0.550127, 40.922 )
 mesh = SubResource( 11 )
-material/0 = null
+material/0 = SubResource( 22 )
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance10"]
 
 [node name="CollisionShape" type="CollisionShape" parent="MeshInstance10/StaticBody"]
+shape = SubResource( 12 )
+
+[node name="MeshInstance12" type="MeshInstance" parent="."]
+transform = Transform( 1.38999, -0.825527, -4.91143, 4.73997, 0.318286, 0.0160455, 0.774992, -0.466045, 8.71078, 41.4332, 0.104624, -8.8905 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance12"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance12/StaticBody"]
 shape = SubResource( 12 )
 
 [node name="SpotLight" type="SpotLight" parent="."]
@@ -156,3 +192,7 @@ shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 201.594
 spot_angle = 46.82
+
+[node name="car_horn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+mix_target = 1

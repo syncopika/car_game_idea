@@ -9,6 +9,8 @@ var last_rpm = 0
 var skidmark_script = load("res://materials/skidmark.gd")
 var texture = preload("res://models/gtr/gtr_texture.png")
 
+var exhaust_particles = []
+
 func _ready():
 	#print("hello world")
 	# TODO: make this material-setting code a global function?
@@ -24,14 +26,24 @@ func _ready():
 		mat.set_shader_param("diffuse", texture)
 	
 	if mat:
-		print("setting material to ", car_mat)
+		#print("setting material to ", car_mat)
 		$"body".set_surface_material(0, mat)
+		
+	exhaust_particles = [$Particles, $Particles2, $Particles3, $Particles4]
 
 func _physics_process(delta):
 	steering = lerp(steering, Input.get_axis("right", "left") * 0.3, 5 * delta);
 
 	var acceleration = Input.get_axis("back", "forward")
 	var deceleration = -1 if Input.is_action_pressed("brake") else 1;
+	
+	if acceleration == 1:
+		# emit exhaust particles
+		for particle in exhaust_particles:
+			particle.emitting = true
+	else:
+		for particle in exhaust_particles:
+			particle.emitting = false
 	
 	# calculate rpm for each back wheel and use that to calculate their engine force
 	var back_left_rpm = $back_left_wheel.get_rpm()

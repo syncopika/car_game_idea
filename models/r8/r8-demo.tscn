@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://models/r8/Material.material" type="Material" id=1]
 [ext_resource path="res://materials/skidmark.material" type="Material" id=2]
@@ -32,6 +32,27 @@ radial_segments = 12
 albedo_color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
 
 [sub_resource type="QuadMesh" id=5]
+
+[sub_resource type="ParticlesMaterial" id=6]
+lifetime_randomness = 0.07
+emission_shape = 3
+emission_point_count = 1
+direction = Vector3( 0, 0, 1 )
+gravity = Vector3( 0, 0, -9.8 )
+linear_accel = -4.92
+linear_accel_random = 0.83
+radial_accel = -3.37
+radial_accel_random = 0.91
+damping = 0.82
+damping_random = 0.52
+angle = 1.9
+angle_random = 0.86
+scale = 0.4
+scale_random = 0.8
+
+[sub_resource type="SphereMesh" id=7]
+radius = 0.01
+height = 0.02
 
 [node name="r8-demo" type="VehicleBody"]
 script = ExtResource( 3 )
@@ -118,3 +139,25 @@ material_override = ExtResource( 2 )
 mesh = SubResource( 5 )
 skeleton = NodePath("../..")
 material/0 = ExtResource( 2 )
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.714178, -0.267217, -2.33947 )
+emitting = false
+amount = 30
+lifetime = 0.42
+speed_scale = 1.5
+randomness = 0.4
+visibility_aabb = AABB( 0, 0, 0, 0.1, 0.1, 0.1 )
+process_material = SubResource( 6 )
+draw_pass_1 = SubResource( 7 )
+
+[node name="Particles2" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.725387, -0.2819, -2.33947 )
+emitting = false
+amount = 30
+lifetime = 0.42
+speed_scale = 1.5
+randomness = 0.4
+visibility_aabb = AABB( 0, 0, 0, 0.1, 0.1, 0.1 )
+process_material = SubResource( 6 )
+draw_pass_1 = SubResource( 7 )

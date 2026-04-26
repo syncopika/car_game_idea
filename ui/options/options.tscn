@@ -39,6 +39,8 @@ margin_left = 95.0
 margin_right = 984.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
+min_value = -10.0
+max_value = 10.0
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
 margin_left = 988.0
@@ -63,6 +65,8 @@ margin_left = 99.0
 margin_right = 984.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
+min_value = -10.0
+max_value = 10.0
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 988.0

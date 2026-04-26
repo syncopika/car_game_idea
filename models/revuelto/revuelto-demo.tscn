@@ -34,6 +34,7 @@ albedo_color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
 [sub_resource type="QuadMesh" id=5]
 
 [node name="revuelto-demo" type="VehicleBody"]
+mass = 28.07
 script = ExtResource( 3 )
 
 [node name="body" type="MeshInstance" parent="."]
@@ -49,9 +50,10 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.378977, -0.188482, 1.75267 )
 use_as_steering = true
 wheel_radius = 0.4
-suspension_stiffness = 50.0
-damping_compression = 1.9
-damping_relaxation = 2.0
+suspension_travel = 0.1
+suspension_stiffness = 200.0
+damping_compression = 3.8
+damping_relaxation = 4.0
 
 [node name="MeshInstance" type="MeshInstance" parent="front_left_wheel"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
@@ -62,9 +64,10 @@ material/0 = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37947, -0.176117, 1.73953 )
 use_as_steering = true
 wheel_radius = 0.4
-suspension_stiffness = 50.0
-damping_compression = 1.9
-damping_relaxation = 2.0
+suspension_travel = 0.1
+suspension_stiffness = 200.0
+damping_compression = 3.8
+damping_relaxation = 4.0
 
 [node name="MeshInstance" type="MeshInstance" parent="front_right_wheel"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
@@ -75,10 +78,10 @@ material/0 = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.423326, -0.193819, -1.24437 )
 use_as_traction = true
 wheel_radius = 0.4
-suspension_travel = 1.0
-suspension_stiffness = 80.0
-damping_compression = 1.9
-damping_relaxation = 2.0
+suspension_travel = 0.1
+suspension_stiffness = 200.0
+damping_compression = 3.8
+damping_relaxation = 4.0
 
 [node name="MeshInstance" type="MeshInstance" parent="back_left_wheel"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
@@ -89,10 +92,10 @@ material/0 = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39324, -0.193861, -1.24726 )
 use_as_traction = true
 wheel_radius = 0.4
-suspension_travel = 1.0
-suspension_stiffness = 80.0
-damping_compression = 1.9
-damping_relaxation = 2.0
+suspension_travel = 0.1
+suspension_stiffness = 200.0
+damping_compression = 3.8
+damping_relaxation = 4.0
 
 [node name="MeshInstance" type="MeshInstance" parent="back_right_wheel"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )

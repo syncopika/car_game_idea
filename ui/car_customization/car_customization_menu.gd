@@ -24,8 +24,12 @@ func _ready():
 		if Global.selected_car == button.text:
 			button.pressed = true
 	
-	audio.volume_db = Global.music_volume_db
-
+	if Global.music_on:
+		audio.playing = true
+		audio.volume_db = Global.music_volume_db
+	else:
+		audio.playing = false
+		
 func _on_material_select_button_pressed():
 	var pressed_btn = material_select_button_group.get_pressed_button()
 	if pressed_btn:

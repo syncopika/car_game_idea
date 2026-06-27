@@ -17,10 +17,10 @@ func get_curr_car_texture():
 		return revuelto_texture
 
 func _process(delta):
-	$"selectedCar".rotate_y(0.5 * delta)
+	$"selectedCarContainer".rotate_y(0.5 * delta)
 
 func change_car_model():
-	for child in $"selectedCar".get_children():
+	for child in $"selectedCarContainer".get_children():
 		child.queue_free()
 	
 	var instance
@@ -32,7 +32,7 @@ func change_car_model():
 		instance = revuelto.instance()
 		
 	if instance:
-		$"selectedCar".add_child(instance)
+		$"selectedCarContainer".add_child(instance)
 		instance.global_transform.origin = Vector3(0, 0, 0)
 
 func update_car_material():
@@ -51,7 +51,7 @@ func update_car_material():
 
 	if mat:
 		#print("setting material to ", car_mat)
-		var car_body = $"selectedCar".get_child(0).get_child(0) # 0th child should be the vehiclebody parent and its 0th child should be the car body mesh
+		var car_body = $"selectedCarContainer".get_child(0).get_child(0) # 0th child should be the vehiclebody parent and its 0th child should be the car body mesh
 		#print(car_body)
 		car_body.set_surface_material(0, mat)
 

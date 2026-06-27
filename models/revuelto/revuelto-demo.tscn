@@ -34,6 +34,7 @@ albedo_color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
 [sub_resource type="QuadMesh" id=5]
 
 [node name="revuelto-demo" type="VehicleBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.412806, 0, 0 )
 mass = 28.07
 script = ExtResource( 3 )
 
@@ -103,7 +104,7 @@ mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
 [node name="camera_pivot" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.999833, 0.0182551, 0, -0.0182551, 0.999833, 0, 0.188795, -0.00816488 )
+transform = Transform( 1, 0, 0, 0, 0.999833, 0.0182551, 0, -0.0182551, 0.999833, -0.407253, 0.188795, -0.00816488 )
 
 [node name="Camera" type="Camera" parent="camera_pivot"]
 transform = Transform( -1, -1.18767e-08, 8.66123e-08, 0, 0.990729, 0.135854, -8.74228e-08, 0.135854, -0.990729, 0, 1.40018, -5.53861 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://ui/main_menu/menu.gd" type="Script" id=1]
 [ext_resource path="res://textures/customizeCarText.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://textures/freeplayTextHover.png" type="Texture" id=7]
 [ext_resource path="res://textures/optionsTextHover.png" type="Texture" id=8]
 [ext_resource path="res://textures/gtr.png" type="Texture" id=9]
+[ext_resource path="res://audio/042026gamebgmidea.ogg" type="AudioStream" id=10]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -144,3 +145,6 @@ margin_right = 1024.0
 margin_bottom = 600.0
 texture = ExtResource( 9 )
 stretch_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )

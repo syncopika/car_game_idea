@@ -16,6 +16,8 @@ var camera_pos = "behind" # behind car
 var initial_car_pos
 var initial_car_rot
 
+onready var audio = $AudioStreamPlayer
+
 func _unhandled_input(event: InputEvent):
 	if !car:
 		return
@@ -56,8 +58,6 @@ func _unhandled_input(event: InputEvent):
 			else:
 				$car_horn.stop()
 			
-			
-			
 func _ready():
 	#print(OS.get_time())
 	var selected_car_model = gtr
@@ -76,3 +76,9 @@ func _ready():
 
 	initial_car_pos = car.global_transform.origin
 	initial_car_rot = car.transform.basis.get_euler()
+	
+	if Global.music_on:
+		audio.playing = true
+		audio.volume_db = Global.music_volume_db
+	else:
+		audio.playing = false

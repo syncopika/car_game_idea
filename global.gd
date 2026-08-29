@@ -7,3 +7,4 @@ var music_volume_db = 0
 var effects_volume_db = -5
 var music_on = false
 var effects_on = true
+var time_of_day_sky = true

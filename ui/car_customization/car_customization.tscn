@@ -3,9 +3,9 @@
 [ext_resource path="res://ui/car_customization/select_material_radio_btn_group.tres" type="ButtonGroup" id=1]
 [ext_resource path="res://textures/backButton.png" type="Texture" id=2]
 [ext_resource path="res://ui/car_customization/car_customize_3d.tscn" type="PackedScene" id=3]
+[ext_resource path="res://audio/sparmmo-charcreationthemeidea1edit2.ogg" type="AudioStream" id=4]
 [ext_resource path="res://ui/options/options_page_back_btn.gd" type="Script" id=6]
 [ext_resource path="res://ui/car_customization/select_car_btn_group.tres" type="ButtonGroup" id=7]
-[ext_resource path="res://audio/041626gamebgmidea.ogg" type="AudioStream" id=8]
 [ext_resource path="res://ui/car_customization/car_customization_menu.gd" type="Script" id=9]
 
 [sub_resource type="ButtonGroup" id=1]
@@ -159,4 +159,4 @@ render_target_update_mode = 3
 [node name="Spatial" parent="MarginContainer/HSplitContainer/ViewportContainer/Viewport" instance=ExtResource( 3 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 4 )

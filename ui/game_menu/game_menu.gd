@@ -5,6 +5,7 @@ func _ready():
 
 func _back_btn_pressed():
 	# go back to main menu
+	print("going back to main menu")
 	get_tree().change_scene("res://ui/main_menu/menu.tscn")
 	get_tree().paused = false
 

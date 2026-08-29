@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/082826bgmidea2.ogg-c60e923febf5e9b80afa36127a01f1c0.oggstr"
+
+[deps]
+
+source_file="res://audio/082826bgmidea2.ogg"
+dest_files=[ "res://.import/082826bgmidea2.ogg-c60e923febf5e9b80afa36127a01f1c0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

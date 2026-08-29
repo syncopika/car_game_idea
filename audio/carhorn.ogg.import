@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/carhorn.ogg-e720e64965638f9771bc507e7c6bbbfc.oggstr"
+
+[deps]
+
+source_file="res://audio/carhorn.ogg"
+dest_files=[ "res://.import/carhorn.ogg-e720e64965638f9771bc507e7c6bbbfc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

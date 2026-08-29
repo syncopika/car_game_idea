@@ -1,8 +1,11 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://maps/course1/game.gd" type="Script" id=1]
 [ext_resource path="res://materials/ground.material" type="Material" id=2]
-[ext_resource path="res://audio/car_horn_edit.ogg" type="AudioStream" id=3]
+[ext_resource path="res://audio/carhorn.ogg" type="AudioStream" id=3]
+[ext_resource path="res://materials/water_mat.tres" type="Material" id=4]
+[ext_resource path="res://maps/course1/WorldEnvironment.gd" type="Script" id=5]
+[ext_resource path="res://audio/052326gamebgmidea2.ogg" type="AudioStream" id=6]
 
 [sub_resource type="CubeMesh" id=2]
 material = ExtResource( 2 )
@@ -11,11 +14,8 @@ size = Vector3( 150, 1, 150 )
 [sub_resource type="ConcavePolygonShape" id=8]
 data = PoolVector3Array( -75, 0.5, 75, 75, 0.5, 75, -75, -0.5, 75, 75, 0.5, 75, 75, -0.5, 75, -75, -0.5, 75, 75, 0.5, -75, -75, 0.5, -75, 75, -0.5, -75, -75, 0.5, -75, -75, -0.5, -75, 75, -0.5, -75, 75, 0.5, 75, 75, 0.5, -75, 75, -0.5, 75, 75, 0.5, -75, 75, -0.5, -75, 75, -0.5, 75, -75, 0.5, -75, -75, 0.5, 75, -75, -0.5, -75, -75, 0.5, 75, -75, -0.5, 75, -75, -0.5, -75, 75, 0.5, 75, -75, 0.5, 75, 75, 0.5, -75, -75, 0.5, 75, -75, 0.5, -75, 75, 0.5, -75, -75, -0.5, 75, 75, -0.5, 75, -75, -0.5, -75, 75, -0.5, 75, 75, -0.5, -75, -75, -0.5, -75 )
 
-[sub_resource type="SpatialMaterial" id=15]
-albedo_color = Color( 0.607843, 0.443137, 0.109804, 1 )
-
 [sub_resource type="PrismMesh" id=9]
-material = SubResource( 15 )
+material = ExtResource( 4 )
 size = Vector3( 4.347, 8, 6 )
 
 [sub_resource type="ConcavePolygonShape" id=10]
@@ -49,6 +49,22 @@ albedo_color = Color( 0.501961, 0.309804, 0.141176, 1 )
 
 [sub_resource type="SpatialMaterial" id=22]
 albedo_color = Color( 0.113725, 0.396078, 0.388235, 1 )
+
+[sub_resource type="ProceduralSky" id=23]
+sun_curve = 3.091
+
+[sub_resource type="Environment" id=24]
+background_mode = 2
+background_sky = SubResource( 23 )
+ambient_light_energy = 1.27
+
+[sub_resource type="Gradient" id=25]
+offsets = PoolRealArray( 0, 0.25, 0.5, 0.75, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.976471, 0.827451, 0.635294, 1, 0.227451, 0.423529, 0.941176, 1, 0.92549, 0.462745, 0.811765, 1, 0, 0, 0, 1 )
+
+[sub_resource type="Gradient" id=26]
+offsets = PoolRealArray( 0, 0.25, 0.5, 0.75, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.94902, 0.811765, 0.52549, 1, 0.180392, 0.376471, 0.643137, 1, 0.713726, 0.403922, 0.905882, 1, 0, 0, 0, 1 )
 
 [node name="game" type="Spatial"]
 pause_mode = 2
@@ -108,7 +124,7 @@ shape = SubResource( 10 )
 [node name="MeshInstance5" type="MeshInstance" parent="."]
 transform = Transform( 0.0767585, 0.0171037, -9.99736, 0.423127, 0.996244, 0.183434, 4.98147, -0.0848843, 0.138466, -9.56918, 1.36468, 53.9744 )
 mesh = SubResource( 11 )
-material/0 = null
+material/0 = ExtResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance5"]
 
@@ -186,7 +202,7 @@ material/0 = null
 shape = SubResource( 12 )
 
 [node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( 0.799538, -0.263679, 0.539641, 0, 0.89848, 0.439014, -0.600616, -0.351008, 0.718369, 59.9952, 37.9263, 74.9729 )
+transform = Transform( 0.799538, -0.263679, 0.539641, 0, 0.89848, 0.439014, -0.600616, -0.351008, 0.718369, 59.9952, 56.5443, 74.9729 )
 light_energy = 2.455
 shadow_enabled = true
 shadow_reverse_cull_face = true
@@ -196,3 +212,12 @@ spot_angle = 46.82
 [node name="car_horn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 mix_target = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 24 )
+script = ExtResource( 5 )
+sky_top_gradient = SubResource( 25 )
+sky_horizon_gradient = SubResource( 26 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )

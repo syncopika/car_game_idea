@@ -12,6 +12,8 @@ some screenshots:
     
 ![time-of-day lighting](screenshots/cargameidea_timeofday_lighting.gif)    
     
+![course 2 gif](screenshots/31-08-2026_195344.gif)    
+    
 some concepts I explore in this demo:    
 - using/writing shaders in Godot
 - changing playable car model + customizations (e.g. different car model textures)
@@ -19,4 +21,4 @@ some concepts I explore in this demo:
 - particle generation (e.g. exhaust smoke)
 - switching scenes + managing game state
 - UI creation (it's hard :/)
-- creating a racetrack within Godot using Path and CSGPolygon nodes (much thanks to ![Bastiaan Olij's great tutorial](https://www.youtube.com/watch?v=Yvy8vQ-5O_w) on how to do so)
+- creating a racetrack within Godot using Path and CSGPolygon nodes (much thanks to [Bastiaan Olij's great tutorial](https://www.youtube.com/watch?v=Yvy8vQ-5O_w) on how to do so)

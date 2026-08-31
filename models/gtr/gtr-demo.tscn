@@ -49,7 +49,6 @@ radius = 0.02
 height = 0.04
 
 [node name="gtr-demo" type="VehicleBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63429, 0 )
 script = ExtResource( 3 )
 
 [node name="body" type="MeshInstance" parent="."]

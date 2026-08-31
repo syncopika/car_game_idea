@@ -26,7 +26,6 @@ func update_lighting(hour):
 	if env != null:
 		var sky = env.get("background_sky")
 		if sky != null and sky is ProceduralSky:
-			
 			# sample the sky color based on time from the gradients - sample() not available in Godot 3
 			var day_fraction = hour / 24.0 # between 0 and 1
 			sky.sky_top_color = sky_top_gradient.interpolate(day_fraction)

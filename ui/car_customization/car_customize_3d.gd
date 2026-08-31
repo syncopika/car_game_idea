@@ -32,8 +32,11 @@ func change_car_model():
 		instance = revuelto.instance()
 		
 	if instance:
+		# make sure car has a kinematic rigid body to prevent physics/gravity
+		# from acting on it while in car customization mode
+		instance.mode = RigidBody.MODE_KINEMATIC
+		
 		$"selectedCarContainer".add_child(instance)
-		instance.global_transform.origin = Vector3(0, 0, 0)
 
 func update_car_material():
 	var car_mat = Global.selected_car_material

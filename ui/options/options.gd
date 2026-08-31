@@ -54,6 +54,7 @@ func _on_toggle_music_pressed():
 	Global.music_on = !Global.music_on
 	var music_volume_slider = $VBoxContainer/HBoxContainer/musicVolume
 	music_volume_slider.editable = Global.music_on
+	audio.playing = Global.music_on
 	
 func _on_toggle_sound_effects_pressed():
 	Global.effects_on = !Global.effects_on

@@ -138,7 +138,7 @@ text = "revuelto"
 [node name="backButton" type="TextureButton" parent="MarginContainer/HSplitContainer/VBoxContainer"]
 margin_top = 108.0
 margin_right = 296.0
-margin_bottom = 173.0
+margin_bottom = 160.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 2 )
 script = ExtResource( 6 )
